@@ -1,0 +1,180 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+/*第四章*/
+
+
+//1．编写一个程序，提示用户输入名和姓，然后以“名, 姓”的格式打印出来。
+//#include<stdio.h>
+//
+//int main() {
+//	char first_name[20];
+//	char last_name[20];
+//
+//	printf("请输入你的名和姓：\n");
+//	scanf("%s %s", first_name, last_name);
+//	printf("你的姓是：%s\n", last_name);
+//	printf("你的名是：%s\n", first_name);
+//	return 0;
+//}
+
+
+//2．编写一个程序，提示用户输入名和姓，并执行一下操作：
+//a．打印名和姓，包括双引号；
+//b．在宽度为 20 的字段右端打印名和姓，包括双引号；
+//c．在宽度为 20 的字段左端打印名和姓，包括双引号；
+//d．在比姓名宽度宽 3 的字段中打印名和姓。
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main() {
+//	char first_name[20];
+//	char last_name[20];
+//	int length;
+
+//	printf("请输入你的名和姓：\n");
+//	scanf("%s %s", first_name, last_name);
+//	length = strlen(first_name) + 3;						// 比姓名宽度宽 3 的字段
+//	printf("你的姓是：\"%s\";你的名是：\"%s\"\n", last_name, first_name);
+//	printf("你的姓是：\"%20s\";你的名是：\"%20s\"\n", last_name,first_name);
+//	printf("你的姓是：\"%*s\";你的名是：\"%*s\"\n", length,last_name,length, first_name);
+//
+//	return 0;
+//}
+
+
+//3．编写一个程序，读取一个浮点数，首先以小数点记数法打印，然后以指数记数法打印。用下面的格
+//式进行输出（系统不同，指数记数法显示的位数可能不同）：
+//a．输入 21.3 或 2.1e+001；
+//b．输入 + 21.290 或 2.129E+001；
+//#include<stdio.h>
+//int main() 
+//{
+//	float num;				// 答案是float类型
+//
+//	printf("请输入一个浮点数：\n");
+//	scanf("%f", &num);
+//	printf("The input is %g or %.1e\n", num, num);
+//	printf("The input is %f or %E\n", num, num);	// 此处有问题	
+//
+//	return 0;
+//}
+
+
+//4．编写一个程序，提示用户输入身高（单位：英寸）和姓名，然后以下面的格式显示用户刚输入的信息：
+//Dabney, you are 6.208 feet tall
+//使用 float 类型，并用 / 作为除号。如果你愿意，可以要求用户以厘米为单位输入身高，并以米为单
+//位显示出来。
+
+//#include<stdio.h>
+//int main()
+//{
+//	float height;
+//	char name[20];
+//
+//	printf("请输入身高（单位：英寸）和姓名：\n");
+//	scanf("%f %s", &height, name);
+//	printf("%s, you are %.3f feet tall\n", name, height / 12.0);
+//
+//	return 0;
+//}
+
+//5．编写一个程序，提示用户输入以兆位每秒（Mb / s）为单位的下载速度和以兆字节（MB）为单位的
+//文件大小。程序中应计算文件的下载时间。注意，这里 1 字节等于 8 位。使用 float 类型，并用 / 作
+//为除号。该程序要以下面的格式打印 3 个变量的值（下载速度、文件大小和下载时间），显示小数
+//点后面两位数字：
+//At 18.12 megabits per second, a file of 2.20 megabytes
+//downloads in 0.97 seconds.
+
+//#include<stdio.h>
+//int main()
+//{
+//	float speed;
+//	float capacity;
+//
+//	printf("请输入下载速度（Mb/s）和文件大小（MB）：\n");
+//	scanf("%f %f", &speed, &capacity);
+//	printf("At %.2f megabits per second, a file of %.2f megabytes\n", speed, capacity);
+//	printf("downloads in %.2f seconds.\n", capacity * 8.0 / speed);
+//
+//	return 0;
+//}
+
+//6．编写一个程序，先提示用户输入名，然后提示用户输入姓。在一行打印用户输入的名和姓，下一行
+//分别打印名和姓的字母数。字母数要与相应名和姓的结尾对齐，如下所示：
+//Melissa Honeybee
+//7 8
+//接下来，再打印相同的信息，但是字母个数与相应名和姓的开头对齐，如下所示：
+//Melissa Honeybee
+//7 8
+
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main() {
+//	char first_name[20];
+//	char last_name[20];
+//	int length;
+//
+//	printf("请输入你的名：\n");
+//	scanf("%s", first_name);
+//	printf("请输入你的姓：\n");
+//	scanf("%s", last_name);
+//
+//	printf("%s %s\n", first_name, last_name);
+//	printf("%*d %*d\n", strlen(first_name), strlen(first_name), strlen(last_name), strlen(last_name));
+//
+//	printf("%s %s\n", first_name, last_name);
+//	printf("%-*d %-*d\n", strlen(first_name), strlen(first_name), strlen(last_name), strlen(last_name));
+//
+//	/*如果单独打印一个字符串的话，可以使用printf的返回值作为字符串的长度*/
+//	/*该方法略*/
+//
+//	return 0;
+//}
+
+
+//7．编写一个程序，将一个 double 类型的变量设置为 1.0 / 3.0，一个 float 类型的变量设置为 1.0 / 3.0。分
+//别显示两次计算的结果各 3 次：一次显示小数点后面 6 位数字；一次显示小数点后面 12 位数字；
+//一次显示小数点后面 16 位数字。程序中要包含 float.h 头文件，并显示 FLT_DIG 和 DBL_DIG 的值。
+//1.0 / 3.0 的值与这些值一致吗？
+
+//#include<stdio.h>
+//#include<float.h>
+//int main()
+//{
+//	double a = 1.0 / 3.0;
+//	float b = 1.0 / 3.0;
+//
+//	printf("%.6lf %.6f\n", a, b);
+//	printf("%.12lf %.12f\n", a, b);
+//	printf("%.16lf %.16f\n", a, b);
+//
+//	printf("FLT_DIG：%d\n", FLT_DIG);
+//	printf("DBL_DIG：%d\n", DBL_DIG);
+//
+//
+//	return 0;
+//}
+
+//8．编写一个程序，提示用户输入旅行的里程和消耗的汽油量。然后计算并显示消耗每加仑汽油行驶的
+//英里数，显示小数点后面一位数字。接下来，使用 1 加仑大约 3.785 升，1 英里大约为 1.609 千米，
+//把单位是英里 / 加仑的值转换为升 / 100 公里（欧洲通用的燃料消耗表示法），并显示结果，显示小数
+//点后面 1 位数字。注意，美国采用的方案测量消耗单位燃料的行程（值越大越好），而欧洲则采用
+//单位距离消耗的燃料测量方案（值越低越好）。使用#define 创建符号常量或使用 const 限定符创建
+//变量来表示两个转换系数。
+
+#include<stdio.h>
+#define GALLON 3.785
+#define MILE 1.609
+int main()
+{
+	float distance;
+	float oil;
+
+	printf("please input distance(mile) and oil(galon):\n");
+	scanf("%f %f", &distance, &oil);
+
+	printf("USA：%.1f\n", distance / oil);
+	printf("EU：%.6f\n", oil*GALLON*100/(distance*MILE));
+
+	return 0;
+}
