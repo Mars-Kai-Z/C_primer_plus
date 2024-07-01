@@ -5,61 +5,61 @@
 //建一个表示 60 的符号常量或 const 变量。通过 while 循环让用户重复输入值，直到用户输入小
 //于或等于 0 的值才停止循环。
 
-//#include<stdio.h>
-//#define HOUR 60
-//int main()
-//{
-//	int mins;	// 输入的分钟数，假设是整数；
-//
-//	printf("please input minitues：(end while)");
-//	scanf("%d", &mins);
-//	while (mins > 0) {
-//		printf("time is %d huous and %d minitues\n", mins / HOUR, mins % HOUR);
-//		printf("please continue to  input minitues：(end while input <= 0)\n");
-//		scanf("%d", &mins);
-//	}
-//	printf("Bye!\n");
-//	return 0;
-//}
+#include<stdio.h>
+#define HOUR 60
+int main()
+{
+	int mins;	// 输入的分钟数，假设是整数；
+
+	printf("please input minitues：(end while)");
+	scanf("%d", &mins);
+	while (mins > 0) {
+		printf("time is %d huous and %d minitues\n", mins / HOUR, mins % HOUR);
+		printf("please continue to  input minitues：(end while input <= 0)\n");
+		scanf("%d", &mins);
+	}
+	printf("Bye!\n");
+	return 0;
+}
 
 //2．编写一个程序，提示用户输入一个整数，然后打印从该数到比该数大 10 的所有整数（例如，用户
 //输入 5，则打印 5～15 的所有整数，包括 5 和 15）。要求打印的各值之间用一个空格、制表符或换
 //行符分开。
  
-//#include<stdio.h>
-//int main()
-//{
-//	int num;
-//	printf("please input a number:");
-//	scanf("%d", &num);
-//	for (int i = 0; i <= 10; i++) {
-//		printf("%3d", num + i);
-//	}
-//
-//	return 0;
-//}
+#include<stdio.h>
+int main()
+{
+	int num;
+	printf("please input a number:");
+	scanf("%d", &num);
+	for (int i = 0; i <= 10; i++) {
+		printf("%3d", num + i);
+	}
+
+	return 0;
+}
 
 //3．编写一个程序，提示用户输入天数，然后将其转换成周数和天数。例如，用户输入 18，则转换成 2
 //周 4 天。以下面的格式显示结果：
 //18 days are 2 weeks, 4 days.
 //通过 while 循环让用户重复输入天数，当用户输入一个非正值时（如 0 或 - 20），循环结束。
 
-//#include<stdio.h>
-//#define WEEK 7
-//int main()
-//{
-//	int days;	// 输入的天数，假设是整数；
-//
-//	printf("please input days：");
-//	scanf("%d", &days);
-//	while (days > 0) {
-//		printf("%d days are %d weeks, %d days.\n", days, days / WEEK, days % WEEK);
-//		printf("please continue to  input days：(end while input <= 0)\n");
-//		scanf("%d", &days);
-//	}
-//	printf("Bye!\n");
-//	return 0;
-//}
+#include<stdio.h>
+#define WEEK 7
+int main()
+{
+	int days;	// 输入的天数，假设是整数；
+
+	printf("please input days：");
+	scanf("%d", &days);
+	while (days > 0) {
+		printf("%d days are %d weeks, %d days.\n", days, days / WEEK, days % WEEK);
+		printf("please continue to  input days：(end while input <= 0)\n");
+		scanf("%d", &days);
+	}
+	printf("Bye!\n");
+	return 0;
+}
 
 //4．编写一个程序，提示用户输入一个身高（单位：厘米），并分别以厘米和英寸为单位显示该值，允
 //许有小数部分。程序应该能让用户重复输入身高，直到用户输入一个非正值。其输出示例如下：
@@ -70,24 +70,24 @@
 //Enter a height in centimeters(<= 0 to quit) : 0
 //bye
 
-//#include<stdio.h>
-//#define FOOT 30.48
-//#define INCH 2.54
-//
-//int main()
-//{
-//	float height;	// 输入身高
-//
-//	printf("Enter a height in centimeters :");
-//	scanf("%f", &height);
-//	while (height > 0) {
-//		printf("%.1f cm = %d feet, %.1f inches.\n", height, (int)(height / FOOT), ((height / FOOT)-(int)(height / FOOT)) * FOOT/INCH);
-//		printf("Enter a height in centimeters(<= 0 to quit) :");
-//		scanf("%f", &height);
-//	}
-//	printf("Bye\n");
-//	return 0;
-//}
+#include<stdio.h>
+#define FOOT 30.48
+#define INCH 2.54
+
+int main()
+{
+	float height;	// 输入身高
+
+	printf("Enter a height in centimeters :");
+	scanf("%f", &height);
+	while (height > 0) {
+		printf("%.1f cm = %d feet, %.1f inches.\n", height, (int)(height / FOOT), ((height / FOOT)-(int)(height / FOOT)) * FOOT/INCH);
+		printf("Enter a height in centimeters(<= 0 to quit) :");
+		scanf("%f", &height);
+	}
+	printf("Bye\n");
+	return 0;
+}
 
 
 
@@ -104,26 +104,27 @@
 
 //7．编写一个程序，提示用户输入一个 double 类型的数，并打印该数的立方值。自己设计一个函数计
 //算并打印立方值。main()函数要把用户输入的值传递给该函数。
-//#include<stdio.h>
-//double Cube(double num);
-//
-//int main()
-//{
-//	double num;
-//	printf("please input a double_float number:");
-//	scanf("%lf", &num);
-//	while (num > 0) {		// this while is only for testing.
-//		num = Cube(num);
-//		printf("The cube is %.2lf:\n", num);
-//		printf("please input a double_float number:(<= 0 to quit):");
-//		scanf("%lf", &num);
-//	}
-//	printf("Bye!\n");
-//	return 0;
-//}
-//double Cube(double num) {
-//	return num * num * num;
-//}
+
+#include<stdio.h>
+double Cube(double num);
+
+int main()
+{
+	double num;
+	printf("please input a double_float number:");
+	scanf("%lf", &num);
+	while (num > 0) {		// this while is only for testing.
+		num = Cube(num);
+		printf("The cube is %.2lf:\n", num);
+		printf("please input a double_float number:(<= 0 to quit):");
+		scanf("%lf", &num);
+	}
+	printf("Bye!\n");
+	return 0;
+}
+double Cube(double num) {
+	return num * num * num;
+}
 
 
 //8．编写一个程序，显示求模运算的结果。把用户输入的第 1 个整数作为求模运算符的第 2 个运算对象，
@@ -138,25 +139,25 @@
 //Enter next number for first operand(<= 0 to quit) : 0
 //Done
 
-//#include<stdio.h>
-//int main()
-//{
-//	int first_num;	// first operand 
-//	int second_num; // second operand
-//
-//	printf("This program computes moduli.\n");
-//	printf("Enter an integer to serve as the second operand :");
-//	scanf("%d", &second_num);
-//	printf("Now enter the first operand :");
-//	scanf("%d", &first_num);
-//	while (first_num > 0) {
-//		printf("%d %% %d is %d\n", first_num, second_num, first_num % second_num);
-//		printf("Enter next number for first operand(<= 0 to quit) :");
-//		scanf("%d", &first_num);
-//	}
-//	printf("Done!\n");
-//	return 0;
-//}
+#include<stdio.h>
+int main()
+{
+	int first_num;	// first operand 
+	int second_num; // second operand
+
+	printf("This program computes moduli.\n");
+	printf("Enter an integer to serve as the second operand :");
+	scanf("%d", &second_num);
+	printf("Now enter the first operand :");
+	scanf("%d", &first_num);
+	while (first_num > 0) {
+		printf("%d %% %d is %d\n", first_num, second_num, first_num % second_num);
+		printf("Enter next number for first operand(<= 0 to quit) :");
+		scanf("%d", &first_num);
+	}
+	printf("Done!\n");
+	return 0;
+}
 
 //9．编写一个程序，要求用户输入一个华氏温度。程序应读取 double 类型的值作为温度值，并把该值
 //作为参数传递给一个用户自定义的函数 Temperatures()。该函数计算摄氏温度和开氏温度，并
